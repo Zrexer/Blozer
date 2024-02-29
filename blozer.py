@@ -138,6 +138,10 @@ class BufferConsole(object):
 username = BufferConsole().addFlag("--username")
 passwlist = BufferConsole().addFlag("--password-list")
 
+if "-h" in sys.argv or "--help" in sys.argv:
+    rich.print("blozer [\"-h\" / \"--help\"] [\'options...\'] [\'args...\']\n\"--username\": set the username\n\"--password-list\": set the password list path")
+
+
 if len(username) == 1:
     if username[0] == "Null":
         print(f"{colors.red}ERROR:{colors.white} cannot get the username")
